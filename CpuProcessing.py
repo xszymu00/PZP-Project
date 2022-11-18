@@ -12,7 +12,6 @@ def ProcessLine(lines: list, stopWords: list):
         stopWords = [stopWord.strip().lower() for stopWord in stopWords]
         words = re.split(r"\W", line)
         for word in words:
-            word = ''.join(e for e in word if e.isalnum())
             if 4 <= len(word) <= 8 and word not in stopWords:
                 filteredData[word] += 1
     return filteredData
